@@ -5,8 +5,127 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap" rel="stylesheet">
 </head>
+<style>
+    body{
+        min-width: 300px;
+        text-align: center;
+    }
+    h1{
+        font-family: 'Sansita Swashed', cursive;
+    }
+
+    .red{
+        color:crimson
+    }
+
+    .blue{
+        color:aqua
+    }
+
+    p,.button {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+        font-size: 1.25rem;
+    }
+
+    .button{
+        background-color: chartreuse;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: 2rem;
+        width: 4.5rem;
+        border-radius: 1rem;
+        
+        cursor:pointer;
+    }
+
+    .row{
+        padding: 0 0.25rem;
+        pointer-events: none;
+    }
+
+    .circle{
+        position:absolute;
+        top:0;
+        left:0;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        background-color: chocolate;
+        
+        pointer-events: none;
+    }
+
+    @keyframes moveCircleRight {
+        from {
+            left: 0;
+            background-color: chocolate;
+        }
+        
+        to {
+            left: 100%;
+            transform: translateX(-100%);
+            background-color: chartreuse;
+        }
+
+    }
+
+
+    @keyframes moveCircleLeft {
+        from {
+            left: 100%;
+            transform: translateX(-100%);
+            background-color: chartreuse;
+        }
+
+        to {
+            left: 0;
+            background-color: chocolate;
+        }
+        
+    }
+
+    @keyframes backgroundGreen {
+        from {
+            background-color: chartreuse;
+        }
+
+        to {
+            background-color: chocolate;
+
+        }
+        
+
+    }
+
+    @keyframes backgroundOrange {
+        from {
+            background-color: chocolate;
+        }
+
+        to{
+            background-color: chartreuse;
+        }
+    }
+
+
+
+</style>
 <body>
-    <p>Hello World!</p>
+    <h1><span class= "red">Dark/</span><span class = "blue">Light.io</span></h1>
+    <p> Chrome extention to alternate between Dark and Light</p>
+    <div class="button">
+        <div class = "row">On</div>
+        <div class = "row">Off</div>
+        <div class = "circle"></div>
+    </div>
+
 </body>
+<script src = ./popup.js></script>
 </html>
